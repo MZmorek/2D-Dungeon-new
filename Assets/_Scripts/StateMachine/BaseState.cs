@@ -1,4 +1,3 @@
-
 namespace Dungeons.States
 {
     public abstract class BaseState

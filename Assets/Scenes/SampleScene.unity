@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363856751}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,32 +250,16 @@ GameObject:
   - component: {fileID: 756490223}
   - component: {fileID: 756490222}
   - component: {fileID: 756490220}
-  - component: {fileID: 756490219}
   - component: {fileID: 756490221}
   - component: {fileID: 756490224}
-  m_Layer: 0
+  - component: {fileID: 756490225}
+  m_Layer: 3
   m_Name: FemaleWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!70 &756490219
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756490218}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.2560352, y: -0.14866841}
-  m_Size: {x: 0.3810718, y: 0.966903}
-  m_Direction: 0
 --- !u!50 &756490220
 Rigidbody2D:
   serializedVersion: 4
@@ -396,8 +380,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c0cd8c2c5929b40902044ef501125b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   movementSpeed: 5
   jumpForce: 5
+--- !u!61 &756490225
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756490218}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.22148812, y: -0.14218724}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.15625, y: 1.375}
+    newSize: {x: 2.15625, y: 1.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.44577622, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1614392194
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +422,7 @@ GameObject:
   - component: {fileID: 1614392197}
   - component: {fileID: 1614392196}
   - component: {fileID: 1614392195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

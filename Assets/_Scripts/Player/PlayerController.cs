@@ -17,6 +17,9 @@ namespace Dungeons.Player
         private bool jumpInput;
         private bool isFacingRight = true;
 
+        private bool active = false;
+        public bool IsActive { get { return active; } }
+
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody2D>();
@@ -25,9 +28,23 @@ namespace Dungeons.Player
 
         private void Update()
         {
+            if (!active)
+            {
+                return;
+            }
             CheckInput();
             ApplyMovement();
             CheckMovementDirection();
+        }
+
+        public void SwitchState(bool state)
+        {
+            active = state;
+
+            if (playerRigidbody != null)
+            {
+                playerRigidbody.simulated = state;
+            }
         }
 
         #region Movement Conditions Methods

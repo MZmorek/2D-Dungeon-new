@@ -8,7 +8,7 @@ namespace Dungeons.States
 
         private void Start ()
         {
-
+            EnterState(new MenuState(this));
         }
         public void EnterState(BaseState newState)
         {
@@ -20,10 +20,6 @@ namespace Dungeons.States
 
             currentState.EnterState();
 
-        }
-        private void Update()
-        {
-            currentState.UpdateState();
         }
 
         private void OnDestroy()

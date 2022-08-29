@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 756490221}
   - component: {fileID: 756490224}
   - component: {fileID: 756490225}
+  - component: {fileID: 756490226}
   m_Layer: 3
   m_Name: FemaleWarrior
   m_TagString: Untagged
@@ -551,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756490218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3346627, y: -0.80282986, z: -0.07163387}
+  m_LocalPosition: {x: -2.08, y: -5.98, z: -0.07163387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -601,6 +602,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44577622, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &756490226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756490218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9a8840642f14048aec583481e4ea55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 756490221}
+  playerSprite: {fileID: 756490222}
 --- !u!1 &911247759
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,8 +14,11 @@ namespace Dungeons.Player
 
         private float raycastLength = 0.6f;
         private float horizontalInput;
+        public float HorizontalInput { get { return horizontalInput; } }
+
         private bool jumpInput;
-        private bool isFacingRight = true;
+
+        public bool JumpInput { get { return jumpInput; } }
 
         private bool active = false;
         public bool IsActive { get { return active; } }
@@ -34,7 +37,6 @@ namespace Dungeons.Player
             }
             CheckInput();
             ApplyMovement();
-            CheckMovementDirection();
         }
 
         public void SwitchState(bool state)
@@ -55,19 +57,7 @@ namespace Dungeons.Player
             jumpInput = Input.GetKeyDown(KeyCode.Space);
         }
 
-        private void CheckMovementDirection()
-        {
-            if (horizontalInput > 0 && !isFacingRight)
-            {
-                Flip();
-            }
-            else if (horizontalInput < 0 && isFacingRight)
-            {
-                Flip();
-            }
-        }
-
-        private bool IsGrounded()
+        internal bool IsGrounded()
         {
             RaycastHit2D hit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, raycastLength, groundLayerMask);
             bool isGrounded = hit.collider != null;
@@ -97,14 +87,7 @@ namespace Dungeons.Player
                 playerRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
         }
-        private void Flip()
-        {
-            Vector3 currentScale = gameObject.transform.localScale;
-            currentScale.x *= -1;
-            gameObject.transform.localScale = currentScale;
 
-            isFacingRight = !isFacingRight;
-        }
         #endregion
     }
 }

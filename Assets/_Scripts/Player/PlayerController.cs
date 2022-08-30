@@ -23,6 +23,8 @@ namespace Dungeons.Player
         private bool active = false;
         public bool IsActive { get { return active; } }
 
+        public bool isGrounded;
+
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody2D>();
@@ -57,11 +59,11 @@ namespace Dungeons.Player
             jumpInput = Input.GetKeyDown(KeyCode.Space);
         }
 
-        internal bool IsGrounded()
+        private bool IsGrounded()
         {
             RaycastHit2D hit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, raycastLength, groundLayerMask);
-            bool isGrounded = hit.collider != null;
-            Debug.DrawRay(playerCollider.bounds.center, Vector2.down * raycastLength, isGrounded ? Color.green : Color.red, 0.5f);
+            isGrounded = hit.collider != null;
+            //Debug.DrawRay(playerCollider.bounds.center, Vector2.down * raycastLength, isGrounded ? Color.green : Color.red, 0.5f);
             return isGrounded;
         }
 

@@ -12,7 +12,7 @@ namespace Dungeons.Player
         private Collider2D playerCollider;
         private Rigidbody2D playerRigidbody;
 
-        private float raycastLength = 0.6f;
+        private float raycastLength = 0.75f;
         private float horizontalInput;
         public float HorizontalInput { get { return horizontalInput; } }
 

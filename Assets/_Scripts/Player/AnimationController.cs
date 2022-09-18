@@ -19,6 +19,7 @@ namespace Dungeons.Player
         {
             Flip();
             PlayRunningAnimation();
+
         }
 
         private void Flip()
@@ -49,7 +50,7 @@ namespace Dungeons.Player
             {
                 playerAnimator.SetBool("isRunning", true);
             }
-            if (playerController.HorizontalInput == 0)
+            if (playerController.HorizontalInput == 0 && playerController.isGrounded)
             {
                 playerAnimator.SetBool("isRunning", false);
             }
@@ -71,7 +72,7 @@ namespace Dungeons.Player
                 playerAnimator.SetBool("isJumping", true);
                 playerController.isGrounded = false;
             }
-                
+
         }
     }
 }

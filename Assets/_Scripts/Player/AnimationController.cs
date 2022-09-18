@@ -45,7 +45,7 @@ namespace Dungeons.Player
 
         private void PlayRunningAnimation()
         {
-            if (playerController.HorizontalInput != 0)
+            if (playerController.HorizontalInput != 0 && playerController.isGrounded)
             {
                 playerAnimator.SetBool("isRunning", true);
             }
